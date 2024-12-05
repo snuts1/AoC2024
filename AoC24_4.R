@@ -9,7 +9,7 @@ input<-separate(data=df,col="input",into=as.character(c(1:141)), sep="")
 # then concatenate the shifts with original to make a list of all forward combos, all upward combos etc.
 # check all combos for XMAS ??? profit
 
-# worth noting that this gives ALL "words" of length=4 so it is a ~general word puzzle solution
+# worth noting that this gives ALL "words" of length=4 so its close to a general word puzzle solution
 # after finishing this it occurs to me that i could look in only 4 directions and check for XMAS or SAMX... oh well
 
 # shift left (look right): removes first column and adds new last column to retain shape
@@ -106,7 +106,7 @@ bigtotal<-totalU+totalD+totalL+totalR+totalUL+totalUR+totalDL+totalDR
 lookULDRoutput<-paste(as.matrix(lookUL1),as.matrix(input),as.matrix(lookDR1),sep="") #check upleft1 downright1 for SAM or MAS
 test1<-(lookULDRoutput=="SAM") | (lookULDRoutput=="MAS")
 
-lookDLURoutput<-paste(as.matrix(lookDL1),as.matrix(input),as.matrix(lookUR1),sep="") #check upright1 downnleft1 for SAM or MAS
+lookDLURoutput<-paste(as.matrix(lookDL1),as.matrix(input),as.matrix(lookUR1),sep="") #check upright1 downleft1 for SAM or MAS
 test2<-(lookDLURoutput=="SAM") | (lookDLURoutput=="MAS")
 
 test3<-test1+test2
