@@ -8,13 +8,9 @@ valids<-unlist(valids)
          
 parse<- function(x) {
   end1<-str_locate(x,',')[1]-1 # subtract 1 to end BEFORE the ,
-  print(end1)
   num1<-as.numeric(substr(x,5,end1)) #first num always starts at pos5 due to proper syntax, first 4chars are mul(
-  print(num1)
   end2<-str_locate(x,'\\)')[1]-1
-  print(end2)
   num2<-as.numeric(substr(x,end1+2,end2)) # add 2 because.. 1 doesnt work
-  print(num2)
   return(num1*num2)
 }
 
